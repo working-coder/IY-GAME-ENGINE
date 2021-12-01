@@ -14,7 +14,10 @@ class Canvas
         this.ctx = this.htmlObj.getContext("2d");
     }
 
-    useColor(color = "black") { this.ctx.fillStyle = color; }
+    strokeColor(color = "black") { this.ctx.strokeStyle = color; }
+    strokeWidth(width = 1) { this.ctx.lineWidth = width; }
+
+    fillColor(color = "black") { this.ctx.fillStyle = color; }
 
     drawLine(...positions)
     {
@@ -34,5 +37,34 @@ class Canvas
 
         this.ctx.stroke();
         this.ctx.closePath();
+    }
+
+    strokeRect(pos1, pos2)
+    {
+        const width = pos2.x - pos1.x;
+        const height = pos2.y - pos1.y;
+
+        this.ctx.rect(pos1.x, pos1.y, width, height);
+        this.ctx.stroke();
+    }
+
+    fillRect(pos1, pos2)
+    {
+        const width = pos2.x - pos1.x;
+        const height = pos2.y - pos1.y;
+
+        this.ctx.rect(pos1.x, pos1.y, width, height);
+        this.ctx.fill();
+    }
+
+    drawImage(img, pos, scale)
+    {
+        if (scale.width == 0 || scale.height == 0)
+        {
+            this.ctx.drawImage(img, pos.x, pos.y);
+            return;
+        }
+
+        this.ctx.drawImage(img, pos.x, pos.y, scale.width, scale.height);
     }
 }
