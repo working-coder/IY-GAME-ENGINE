@@ -19,7 +19,6 @@ class Window
 
     addObject(Object)
     {
-       -
         this.objects.push(Object);
     }
 
