@@ -56,15 +56,4 @@ class Canvas
         this.ctx.rect(pos1.x, pos1.y, width, height);
         this.ctx.fill();
     }
-
-    drawImage(img, pos, scale)
-    {
-        if (scale.width == 0 || scale.height == 0)
-        {
-            this.ctx.drawImage(img, pos.x, pos.y);
-            return;
-        }
-
-        this.ctx.drawImage(img, pos.x, pos.y, scale.width, scale.height);
-    }
 }

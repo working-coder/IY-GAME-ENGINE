@@ -1,11 +1,7 @@
 class Window
 {
     canvas;
-
-
-     objects = [
-      
-    ];
+    objects = [];
 
     constructor(width = 500, height = 500)
     {
@@ -19,12 +15,11 @@ class Window
 
     addObject(Object)
     {
-       -
-        this.objects.push(Object);
+       
     }
 
     render()
     {
-
+        // Add rendering code
     }
 }

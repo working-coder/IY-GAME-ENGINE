@@ -1,34 +1,28 @@
 class Object
 {
-    
+    pos;
+    scale;
+    Window;
 
-    x = 10;
-    y = 10;
-    width = 10;
-    height = 10;
-    WINDOW = new Window(500,500);
-    constructor(sizeX,sizeY,Sprite)
+    constructor(sizeX, sizeY)
     {
         if(sizeX < 1)
-        {
             sizeX = 1;
-            
-        }
-        this.width = sizeX;
+
         if(sizeY < 1)
-        {
             sizeY = 1;
-        }
+
+        this.width = sizeX;
         this.height = sizeY;
-
     }
 
-    Move(pixelsX,pixelsY) {
-        this.x += pixelsX;
-        this.y += pixelsY;
-        
-        return x+y;
+    move(delta)
+    {
+        this.x += delta.x;
+        this.y += delta.y;
+
+        this.Window.render();
     }
 
-   
+   assignWindow(window) { this.window = window; }
 }
