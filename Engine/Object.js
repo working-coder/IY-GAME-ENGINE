@@ -1,10 +1,13 @@
+const closedShape = { "Rect": "Rectangle", "Tri": "Triangle", "Cir": "Circle" }
+
 class Object
 {
+    closedShape;
     pos;
     scale;
     Window;
 
-    constructor(sizeX, sizeY)
+    constructor(sizeX, sizeY, shape = closedShape["Rect"])
     {
         if(sizeX < 1)
             sizeX = 1;
@@ -14,6 +17,8 @@ class Object
 
         this.width = sizeX;
         this.height = sizeY;
+
+        this.closedShape = shape;
     }
 
     move(delta)
