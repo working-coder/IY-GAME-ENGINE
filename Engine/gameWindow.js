@@ -13,9 +13,9 @@ class Window
 
     }
 
-    addObject(Object)
+    addObject()
     {
-       
+
     }
 
     render()
