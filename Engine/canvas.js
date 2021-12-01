@@ -2,9 +2,14 @@ class Canvas
 {
     htmlObj;
     ctx;
+    width = 500;
+    height = 500;
 
     constructor(width = 500, height = 500)
     {
+        this.width = width;
+        this.height = height;
+
         this.htmlObj = document.createElement("canvas");
         document.body.appendChild(this.htmlObj);
 
