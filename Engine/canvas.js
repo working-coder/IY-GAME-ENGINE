@@ -22,8 +22,6 @@ class Canvas
     strokeColor(color = "black") { this.ctx.strokeStyle = color; }
     strokeWidth(width = 1) { this.ctx.lineWidth = width; }
 
-    fillColor(color = "black") { this.ctx.fillStyle = color; }
-
     drawLine(...positions)
     {
         if (positions.length < 2)
